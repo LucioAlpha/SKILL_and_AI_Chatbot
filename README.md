@@ -51,7 +51,16 @@
 | FastAPI 後端     | RESTful API 提供抽籤與歷史管理端點             | ✅       |
 | SQLite 資料庫    | 儲存 100 筆籤詩資料與訪客抽籤紀錄              | ✅       |
 
-### 4. 心得報告（本 README.md 下方）
+### 4. 系統截圖（screenshots/）
+在 screenshots/ 資料夾放入截圖
+
+![](screenshots/首頁.png)
+
+![](screenshots/抽籤.png)
+
+![](screenshots/歷史紀錄.png)
+
+### 5. 心得報告（本 README.md 下方）
 
 在本 README 的**心得報告**區填寫。
 
