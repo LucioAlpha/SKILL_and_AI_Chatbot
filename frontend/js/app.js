@@ -44,9 +44,15 @@ function onCategory() {
 
 /** 搖籤頁 */
 function onShake() {
-  const stick    = document.querySelector('.fortune-stick');
-  const btn      = document.getElementById('btn-do-shake');
-  const hint     = document.querySelector('.shake-hint');
+  const stick = document.querySelector('.fortune-stick');
+  const btn   = document.getElementById('btn-do-shake');
+  const hint  = document.querySelector('.shake-hint');
+
+  // ✅ 每次進入頁面都重置狀態（修正：回首頁再次抽籤時按鈕仍 disabled 的 Bug）
+  btn?.removeAttribute('disabled');
+  stick?.classList.remove('shaking', 'glow-pulse', 'fly-out');
+  if (hint) hint.setAttribute('data-i18n', 'shake.hint');
+  if (hint) hint.textContent = t('shake.hint');
 
   async function doShake() {
     if (!stick) return;
@@ -57,7 +63,7 @@ function onShake() {
 
     // 搖動期間呼叫 API
     const [fortune] = await Promise.all([
-      drawFortune().catch(e => { showError('籤詩載入失敗，請重試'); throw e; }),
+      drawFortune().catch(e => { showError('籤詩載入失敗，請重試'); btn?.removeAttribute('disabled'); throw e; }),
       new Promise(r => setTimeout(r, SHAKE_DURATION_MS)),
     ]);
 
@@ -67,7 +73,7 @@ function onShake() {
     _currentFortune = fortune;
 
     // 儲存紀錄（fire-and-forget，不阻塞流程）
-    saveHistory(fortune.id, _currentCategory || '一般').catch(console.error);
+    saveHistory(fortune.id, _currentCategory || '一般').catch(e => console.error('[saveHistory]', e));
 
     setTimeout(() => navigate('result', { fortune }), 500);
   }
@@ -82,6 +88,7 @@ function onShake() {
     listenMotion(doShake);
   }
 }
+
 
 function listenMotion(cb) {
   let called = false;

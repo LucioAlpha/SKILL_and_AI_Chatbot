@@ -31,7 +31,8 @@ def get_history(
 ):
     """取得當前訪客最近 10 筆抽籤紀錄"""
     records = crud.get_history_by_visitor(db, visitor_id)
-    return {"success": True, "data": records}
+    # ✅ 修正：明確轉換 ORM 物件為 Pydantic Schema（ApiResponse.data 為 Any，不會自動序列化）
+    return {"success": True, "data": [schemas.HistoryOut.model_validate(r) for r in records]}
 
 
 @router.post("", response_model=schemas.ApiResponse)
@@ -43,7 +44,8 @@ def add_history(
     """新增一筆抽籤紀錄"""
     try:
         record = crud.create_history(db, visitor_id, payload)
-        return {"success": True, "data": record}
+        # ✅ 修正：明確轉換 ORM 物件為 Pydantic Schema
+        return {"success": True, "data": schemas.HistoryOut.model_validate(record)}
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
 
