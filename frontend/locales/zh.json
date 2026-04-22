@@ -1,0 +1,34 @@
+{
+  "nav": { "brand": "公廟求籤", "history": "紀錄" },
+  "home": {
+    "title": "公廟線上抽運勢籤",
+    "subtitle": "誠心所求，神明指引",
+    "start": "🎋 開始求籤"
+  },
+  "category": {
+    "title": "請選擇問事事項",
+    "wish": "願望", "health": "疾病", "travel": "旅行",
+    "marriage": "嫁娶", "relationship": "交往",
+    "house": "蓋新居", "moving": "搬家", "lost": "遺失物"
+  },
+  "shake": {
+    "title": "搖動籤筒",
+    "hint": "點擊按鈕或晃動手機搖籤",
+    "btn": "🎋 搖籤",
+    "shaking": "搖籤中…"
+  },
+  "result": {
+    "share_line": "LINE",
+    "share_fb": "Facebook",
+    "copy_link": "複製連結",
+    "copied": "連結已複製！",
+    "draw_again": "再抽一次"
+  },
+  "history": {
+    "title": "抽籤紀錄",
+    "empty": "尚無抽籤紀錄",
+    "clear": "🗑 清除所有紀錄",
+    "confirm_clear": "確定要清除所有抽籤紀錄？",
+    "cleared": "紀錄已清除"
+  }
+}

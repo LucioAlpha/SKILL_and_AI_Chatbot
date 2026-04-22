@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="公廟線上抽運勢籤，體驗台灣傳統廟宇抽籤文化，獲得感情、事業、健康、財運指引。" />
+  <meta property="og:title" content="公廟線上抽運勢籤" />
+  <meta property="og:description" content="虛擬搖籤筒，抽取籤詩獲得運勢指引。" />
+  <title>公廟線上抽運勢籤</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+</head>
+<body>
+
+<!-- ── Navbar ──────────────────────────────────────────── -->
+<nav id="navbar" role="navigation" aria-label="主導覽">
+  <a href="#home" class="nav-brand" id="nav-home" data-i18n="nav.brand">公廟求籤</a>
+  <div class="nav-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="nav-history" data-i18n="nav.history">紀錄</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="btn-lang" aria-label="切換語言">EN</button>
+  </div>
+</nav>
+
+<!-- ── Page: Home ──────────────────────────────────────── -->
+<section id="page-home" class="page active" aria-label="首頁">
+  <div class="smoke-container" style="position:relative;height:60px;display:flex;justify-content:center;margin-top:120px;">
+    <div class="smoke-particle"></div>
+    <div class="smoke-particle"></div>
+    <div class="smoke-particle"></div>
+  </div>
+  <p class="home-temple-icon" aria-hidden="true">🏯</p>
+  <h1 class="home-title" data-i18n="home.title">公廟線上抽運勢籤</h1>
+  <p class="home-subtitle" data-i18n="home.subtitle">誠心所求，神明指引</p>
+  <button type="button" class="btn btn-primary glow-pulse" id="btn-start" data-i18n="home.start">
+    🎋 開始求籤
+  </button>
+</section>
+
+<!-- ── Page: Category ──────────────────────────────────── -->
+<section id="page-category" class="page" aria-label="選擇問事類別">
+  <h2 class="page-title" data-i18n="category.title">請選擇問事事項</h2>
+  <div class="category-grid">
+    <div class="category-card" data-category="願望" role="button" tabindex="0" aria-label="願望">
+      <span class="category-icon" aria-hidden="true">🌟</span>
+      <span class="category-name" data-i18n="category.wish">願望</span>
+    </div>
+    <div class="category-card" data-category="疾病" role="button" tabindex="0" aria-label="疾病">
+      <span class="category-icon" aria-hidden="true">🌿</span>
+      <span class="category-name" data-i18n="category.health">疾病</span>
+    </div>
+    <div class="category-card" data-category="旅行" role="button" tabindex="0" aria-label="旅行">
+      <span class="category-icon" aria-hidden="true">✈️</span>
+      <span class="category-name" data-i18n="category.travel">旅行</span>
+    </div>
+    <div class="category-card" data-category="嫁娶" role="button" tabindex="0" aria-label="嫁娶">
+      <span class="category-icon" aria-hidden="true">💒</span>
+      <span class="category-name" data-i18n="category.marriage">嫁娶</span>
+    </div>
+    <div class="category-card" data-category="交往" role="button" tabindex="0" aria-label="交往">
+      <span class="category-icon" aria-hidden="true">❤️</span>
+      <span class="category-name" data-i18n="category.relationship">交往</span>
+    </div>
+    <div class="category-card" data-category="蓋新居" role="button" tabindex="0" aria-label="蓋新居">
+      <span class="category-icon" aria-hidden="true">🏠</span>
+      <span class="category-name" data-i18n="category.house">蓋新居</span>
+    </div>
+    <div class="category-card" data-category="搬家" role="button" tabindex="0" aria-label="搬家">
+      <span class="category-icon" aria-hidden="true">📦</span>
+      <span class="category-name" data-i18n="category.moving">搬家</span>
+    </div>
+    <div class="category-card" data-category="遺失物" role="button" tabindex="0" aria-label="遺失物">
+      <span class="category-icon" aria-hidden="true">🔍</span>
+      <span class="category-name" data-i18n="category.lost">遺失物</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Page: Shake ─────────────────────────────────────── -->
+<section id="page-shake" class="page" aria-label="搖籤">
+  <div class="shake-container">
+    <h2 class="page-title" data-i18n="shake.title">搖動籤筒</h2>
+    <div class="fortune-stick-wrap" aria-hidden="true">
+      <div class="fortune-stick">籤</div>
+    </div>
+    <p class="shake-hint" data-i18n="shake.hint">點擊按鈕或晃動手機搖籤</p>
+    <button type="button" class="btn btn-primary" id="btn-do-shake" data-i18n="shake.btn">
+      🎋 搖籤
+    </button>
+  </div>
+</section>
+
+<!-- ── Page: Result ────────────────────────────────────── -->
+<section id="page-result" class="page" aria-label="籤詩結果">
+  <div class="card result-card">
+    <span id="result-grade" class="result-grade" aria-live="polite">—</span>
+    <p id="result-poem" class="result-poem"></p>
+    <div id="result-meaning" class="result-meaning"></div>
+    <div id="result-category-section" class="result-category-meaning hidden">
+      <div id="result-category-label" class="result-category-label"></div>
+      <div id="result-category-text"></div>
+    </div>
+    <p id="result-note" class="result-note hidden"></p>
+  </div>
+  <div class="result-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="btn-share-line" aria-label="分享至 LINE">
+      📱 <span data-i18n="result.share_line">LINE</span>
+    </button>
+    <button type="button" class="btn btn-ghost btn-sm" id="btn-share-fb" aria-label="分享至 Facebook">
+      👥 <span data-i18n="result.share_fb">Facebook</span>
+    </button>
+    <button type="button" class="btn btn-ghost btn-sm" id="btn-copy-link" aria-label="複製連結">
+      🔗 <span data-i18n="result.copy_link">複製連結</span>
+    </button>
+    <button type="button" class="btn btn-primary" id="btn-draw-again" data-i18n="result.draw_again">
+      再抽一次
+    </button>
+  </div>
+</section>
+
+<!-- ── Page: History ───────────────────────────────────── -->
+<section id="page-history" class="page" aria-label="抽籤紀錄">
+  <h2 class="page-title" data-i18n="history.title">抽籤紀錄</h2>
+  <div id="history-list" class="history-list" role="list"></div>
+  <p id="history-empty" class="history-empty hidden" data-i18n="history.empty">尚無紀錄</p>
+  <button type="button" class="btn btn-ghost btn-sm" id="btn-clear-history" data-i18n="history.clear">
+    🗑 清除所有紀錄
+  </button>
+</section>
+
+<!-- ── Toast ───────────────────────────────────────────── -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

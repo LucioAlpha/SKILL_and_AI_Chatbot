@@ -1,0 +1,34 @@
+{
+  "nav": { "brand": "Temple Fortune", "history": "History" },
+  "home": {
+    "title": "Temple Fortune Sticks",
+    "subtitle": "Seek guidance from the divine",
+    "start": "🎋 Draw Fortune"
+  },
+  "category": {
+    "title": "Choose your question",
+    "wish": "Wish", "health": "Health", "travel": "Travel",
+    "marriage": "Marriage", "relationship": "Relationship",
+    "house": "New Home", "moving": "Moving", "lost": "Lost Item"
+  },
+  "shake": {
+    "title": "Shake the Cup",
+    "hint": "Tap the button or shake your phone",
+    "btn": "🎋 Shake",
+    "shaking": "Shaking…"
+  },
+  "result": {
+    "share_line": "LINE",
+    "share_fb": "Facebook",
+    "copy_link": "Copy Link",
+    "copied": "Link copied!",
+    "draw_again": "Draw Again"
+  },
+  "history": {
+    "title": "Fortune History",
+    "empty": "No fortune records yet",
+    "clear": "🗑 Clear All",
+    "confirm_clear": "Clear all fortune records?",
+    "cleared": "Records cleared"
+  }
+}
