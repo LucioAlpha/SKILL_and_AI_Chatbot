@@ -54,11 +54,24 @@
 ### 4. 系統截圖（screenshots/）
 在 screenshots/ 資料夾放入截圖
 
-![](screenshots/首頁.png)
+![首頁](screenshots/首頁.png)
 
-![](screenshots/抽籤.png)
 
-![](screenshots/歷史紀錄.png)
+![問題分類](screenshots/問題分類.png)
+
+
+![抽籤畫面](screenshots/抽籤畫面.png)
+
+
+![抽籤結果](screenshots/抽籤結果.png)
+
+
+![抽籤紀錄](screenshots/抽籤紀錄.png)
+
+
+![英文介面示例](screenshots/英文介面示例.png)
+
+![執行畫面](screenshots/執行畫面.png)
 
 ### 5. 心得報告（本 README.md 下方）
 
